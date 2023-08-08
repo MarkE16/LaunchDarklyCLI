@@ -1,0 +1,375 @@
+== Info:   Trying 143.244.220.150:80...
+== Info: connect to 143.244.220.150 port 80 failed: Operation timed out
+== Info: Failed to connect to PATCH port 80 after 75059 ms: Couldn't connect to server
+== Info: Closing connection 0
+== Info:   Trying 151.101.162.217:443...
+== Info: Connected to app.launchdarkly.com (151.101.162.217) port 443 (#1)
+== Info: ALPN: offers h2,http/1.1
+== Info: (304) (OUT), TLS handshake, Client hello (1):
+=> Send SSL data, 325 bytes (0x145)
+0000: 01 00 01 41 03 03 cc d3 f8 a2 a9 0a 33 40 c1 ea ...A........3@..
+0010: d6 df ec 5f 8a 31 04 44 d6 f5 46 c8 32 af fd 9e ..._.1.D..F.2...
+0020: 4e dc fe c6 e6 25 20 50 73 4d 7b ef 4c 31 88 71 N....% PsM{.L1.q
+0030: 8e 63 95 30 44 96 ba e9 f0 6d 1e fc 41 3c 61 96 .c.0D....m..A<a.
+0040: a0 d3 85 d9 81 42 29 00 62 13 02 13 03 13 01 c0 .....B).b.......
+0050: 30 c0 2c c0 28 c0 24 c0 14 c0 0a 00 9f 00 6b 00 0.,.(.$.......k.
+0060: 39 cc a9 cc a8 cc aa ff 85 00 c4 00 88 00 81 00 9...............
+0070: 9d 00 3d 00 35 00 c0 00 84 c0 2f c0 2b c0 27 c0 ..=.5...../.+.'.
+0080: 23 c0 13 c0 09 00 9e 00 67 00 33 00 be 00 45 00 #.......g.3...E.
+0090: 9c 00 3c 00 2f 00 ba 00 41 c0 11 c0 07 00 05 00 ..<./...A.......
+00a0: 04 c0 12 c0 08 00 16 00 0a 00 ff 01 00 00 96 00 ................
+00b0: 2b 00 09 08 03 04 03 03 03 02 03 01 00 33 00 26 +............3.&
+00c0: 00 24 00 1d 00 20 fe 21 f5 f0 6b 67 07 ac bc a8 .$... .!..kg....
+00d0: 11 44 56 6a 34 47 a5 7d 5a bc 60 21 0e 72 f6 f7 .DVj4G.}Z.`!.r..
+00e0: 80 64 d5 0b f5 62 00 00 00 19 00 17 00 00 14 61 .d...b.........a
+00f0: 70 70 2e 6c 61 75 6e 63 68 64 61 72 6b 6c 79 2e pp.launchdarkly.
+0100: 63 6f 6d 00 0b 00 02 01 00 00 0a 00 0a 00 08 00 com.............
+0110: 1d 00 17 00 18 00 19 00 0d 00 18 00 16 08 06 06 ................
+0120: 01 06 03 08 05 05 01 05 03 08 04 04 01 04 03 02 ................
+0130: 01 02 03 00 10 00 0e 00 0c 02 68 32 08 68 74 74 ..........h2.htt
+0140: 70 2f 31 2e 31                                  p/1.1
+== Info:  CAfile: /etc/ssl/cert.pem
+== Info:  CApath: none
+== Info: (304) (IN), TLS handshake, Server hello (2):
+<= Recv SSL data, 100 bytes (0x64)
+0000: 02 00 00 60 03 03 64 cd 64 68 f6 46 f4 55 cc 9e ...`..d.dh.F.U..
+0010: 57 20 ba db 7a 51 7d f8 8f 48 04 36 b5 91 1c d1 W ..zQ}..H.6....
+0020: 8f 14 c6 97 8d 7b 20 c1 b6 1c d3 81 10 c6 9e a1 .....{ .........
+0030: 1a e2 75 89 2c 0f 0a 86 b9 76 ae 8d 4e 66 76 b9 ..u.,....v..Nfv.
+0040: 06 f1 96 23 a3 5d a8 cc a8 00 00 18 00 00 00 00 ...#.]..........
+0050: ff 01 00 01 00 00 0b 00 02 01 00 00 10 00 05 00 ................
+0060: 03 02 68 32                                     ..h2
+== Info: TLSv1.2 (IN), TLS handshake, Certificate (11):
+<= Recv SSL data, 2830 bytes (0xb0e)
+0000: 0b 00 0b 0a 00 0b 07 00 06 6e 30 82 06 6a 30 82 .........n0..j0.
+0010: 05 52 a0 03 02 01 02 02 10 01 b8 2e 02 6c 99 f7 .R...........l..
+0020: bb d7 4a 52 10 12 15 0c f2 30 0d 06 09 2a 86 48 ..JR.....0...*.H
+0030: 86 f7 0d 01 01 0b 05 00 30 58 31 0b 30 09 06 03 ........0X1.0...
+0040: 55 04 06 13 02 42 45 31 19 30 17 06 03 55 04 0a U....BE1.0...U..
+0050: 13 10 47 6c 6f 62 61 6c 53 69 67 6e 20 6e 76 2d ..GlobalSign nv-
+0060: 73 61 31 2e 30 2c 06 03 55 04 03 13 25 47 6c 6f sa1.0,..U...%Glo
+0070: 62 61 6c 53 69 67 6e 20 41 74 6c 61 73 20 52 33 balSign Atlas R3
+0080: 20 44 56 20 54 4c 53 20 43 41 20 32 30 32 33 20  DV TLS CA 2023 
+0090: 51 32 30 1e 17 0d 32 33 30 37 30 32 30 30 34 38 Q20...2307020048
+00a0: 35 37 5a 17 0d 32 34 30 38 30 32 30 30 34 38 35 57Z..24080200485
+00b0: 36 5a 30 1f 31 1d 30 1b 06 03 55 04 03 0c 14 61 6Z0.1.0...U....a
+00c0: 70 70 2e 6c 61 75 6e 63 68 64 61 72 6b 6c 79 2e pp.launchdarkly.
+00d0: 63 6f 6d 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 com0.."0...*.H..
+00e0: 0d 01 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 ...........0....
+00f0: 82 01 01 00 ca da be 20 24 26 5c 43 ec 4f cc 66 ....... $&\C.O.f
+0100: 39 68 87 e1 6c 99 24 f9 78 79 e9 af 44 cb 86 00 9h..l.$.xy..D...
+0110: ba d9 33 4f 42 7e e6 26 57 98 38 88 e2 13 94 78 ..3OB~.&W.8....x
+0120: 40 79 21 7e f0 63 b1 18 cf bd 9c a8 9c 02 75 95 @y!~.c........u.
+0130: 88 81 dc 3f f6 83 1e ef f2 fb aa 98 9e cd 11 3b ...?...........;
+0140: 47 c9 69 a6 1f 46 f7 eb e0 e6 04 cc ed bb 5b e0 G.i..F........[.
+0150: c2 13 38 e7 d5 59 71 8c 9d a5 f0 76 0e c8 3f b2 ..8..Yq....v..?.
+0160: 05 ac 3e 49 18 07 a8 7f c8 84 1b a6 5c a0 6e 1b ..>I........\.n.
+0170: be 85 cd 2f b7 60 17 a5 ea c4 a0 0d 7e 1b 87 2c .../.`......~..,
+0180: 5a 54 f2 18 cb f3 2e 6d f8 02 65 c1 5f 5e b7 2f ZT.....m..e._^./
+0190: a9 93 03 a8 10 5a 0c fb 7e c6 d8 c7 12 90 54 ac .....Z..~.....T.
+01a0: f9 55 ee 53 1f 22 b7 27 f1 b8 d6 ae 80 bc e2 80 .U.S.".'........
+01b0: 4f 0d ee ef 54 56 29 ec a2 a2 59 4a 36 78 c9 f7 O...TV)...YJ6x..
+01c0: 07 a6 13 f3 cd 16 4c da 6a d4 75 94 c8 7d bf 18 ......L.j.u..}..
+01d0: a8 0c b6 44 c5 89 00 68 b4 e5 aa 78 d3 e5 df 67 ...D...h...x...g
+01e0: 29 4c 2c b3 90 89 31 d9 f6 f2 04 97 3f 2e 65 18 )L,...1.....?.e.
+01f0: e2 89 40 f3 02 03 01 00 01 a3 82 03 67 30 82 03 ..@.........g0..
+0200: 63 30 1f 06 03 55 1d 11 04 18 30 16 82 14 61 70 c0...U....0...ap
+0210: 70 2e 6c 61 75 6e 63 68 64 61 72 6b 6c 79 2e 63 p.launchdarkly.c
+0220: 6f 6d 30 0e 06 03 55 1d 0f 01 01 ff 04 04 03 02 om0...U.........
+0230: 05 a0 30 1d 06 03 55 1d 25 04 16 30 14 06 08 2b ..0...U.%..0...+
+0240: 06 01 05 05 07 03 01 06 08 2b 06 01 05 05 07 03 .........+......
+0250: 02 30 1d 06 03 55 1d 0e 04 16 04 14 07 33 8c 0d .0...U.......3..
+0260: fd 1a 11 38 42 ca 72 af 23 06 5e b1 5c 69 86 b8 ...8B.r.#.^.\i..
+0270: 30 57 06 03 55 1d 20 04 50 30 4e 30 08 06 06 67 0W..U. .P0N0...g
+0280: 81 0c 01 02 01 30 42 06 0a 2b 06 01 04 01 a0 32 .....0B..+.....2
+0290: 0a 01 03 30 34 30 32 06 08 2b 06 01 05 05 07 02 ...0402..+......
+02a0: 01 16 26 68 74 74 70 73 3a 2f 2f 77 77 77 2e 67 ..&https://www.g
+02b0: 6c 6f 62 61 6c 73 69 67 6e 2e 63 6f 6d 2f 72 65 lobalsign.com/re
+02c0: 70 6f 73 69 74 6f 72 79 2f 30 0c 06 03 55 1d 13 pository/0...U..
+02d0: 01 01 ff 04 02 30 00 30 81 9e 06 08 2b 06 01 05 .....0.0....+...
+02e0: 05 07 01 01 04 81 91 30 81 8e 30 40 06 08 2b 06 .......0..0@..+.
+02f0: 01 05 05 07 30 01 86 34 68 74 74 70 3a 2f 2f 6f ....0..4http://o
+0300: 63 73 70 2e 67 6c 6f 62 61 6c 73 69 67 6e 2e 63 csp.globalsign.c
+0310: 6f 6d 2f 63 61 2f 67 73 61 74 6c 61 73 72 33 64 om/ca/gsatlasr3d
+0320: 76 74 6c 73 63 61 32 30 32 33 71 32 30 4a 06 08 vtlsca2023q20J..
+0330: 2b 06 01 05 05 07 30 02 86 3e 68 74 74 70 3a 2f +.....0..>http:/
+0340: 2f 73 65 63 75 72 65 2e 67 6c 6f 62 61 6c 73 69 /secure.globalsi
+0350: 67 6e 2e 63 6f 6d 2f 63 61 63 65 72 74 2f 67 73 gn.com/cacert/gs
+0360: 61 74 6c 61 73 72 33 64 76 74 6c 73 63 61 32 30 atlasr3dvtlsca20
+0370: 32 33 71 32 2e 63 72 74 30 1f 06 03 55 1d 23 04 23q2.crt0...U.#.
+0380: 18 30 16 80 14 c6 a2 61 13 45 15 cc 90 8f ba c1 .0.....a.E......
+0390: ac bc cc 3b 0d 0e d0 de 06 30 48 06 03 55 1d 1f ...;.....0H..U..
+03a0: 04 41 30 3f 30 3d a0 3b a0 39 86 37 68 74 74 70 .A0?0=.;.9.7http
+03b0: 3a 2f 2f 63 72 6c 2e 67 6c 6f 62 61 6c 73 69 67 ://crl.globalsig
+03c0: 6e 2e 63 6f 6d 2f 63 61 2f 67 73 61 74 6c 61 73 n.com/ca/gsatlas
+03d0: 72 33 64 76 74 6c 73 63 61 32 30 32 33 71 32 2e r3dvtlsca2023q2.
+03e0: 63 72 6c 30 82 01 7d 06 0a 2b 06 01 04 01 d6 79 crl0..}..+.....y
+03f0: 02 04 02 04 82 01 6d 04 82 01 69 01 67 00 75 00 ......m...i.g.u.
+0400: 76 ff 88 3f 0a b6 fb 95 51 c2 61 cc f5 87 ba 34 v..?....Q.a....4
+0410: b4 a4 cd bb 29 dc 68 42 0a 9f e6 67 4c 5a 3a 74 ....).hB...gLZ:t
+0420: 00 00 01 89 14 13 03 ee 00 00 04 03 00 46 30 44 .............F0D
+0430: 02 20 57 99 1f c1 1f 8d 85 6f 17 3b 96 3f 7a 9f . W......o.;.?z.
+0440: c5 15 da 46 d6 7e 10 f6 8b b1 20 1e a9 6f 51 15 ...F.~.... ..oQ.
+0450: a9 52 02 20 52 c6 82 df 8e c9 9b d0 87 d2 2e eb .R. R...........
+0460: c5 74 f3 8b 00 b7 08 5b 73 d1 19 02 6d c8 4a cd .t.....[s...m.J.
+0470: b8 01 49 08 00 76 00 ee cd d0 64 d5 db 1a ce c5 ..I..v....d.....
+0480: 5c b7 9d b4 cd 13 a2 32 87 46 7c bc ec de c3 51 \......2.F|....Q
+0490: 48 59 46 71 1f b5 9b 00 00 01 89 14 13 04 20 00 HYFq.......... .
+04a0: 00 04 03 00 47 30 45 02 21 00 cf 74 b8 4b 5c 84 ....G0E.!..t.K\.
+04b0: 70 8e c0 79 47 f4 e1 e2 b3 04 07 85 fb d6 61 07 p..yG.........a.
+04c0: 3c de d0 f5 93 82 66 51 d6 03 02 20 1f 27 b3 c2 <.....fQ... .'..
+04d0: 7e a0 8f da 88 3b 63 de 71 eb 44 1e bc fd 8e c1 ~....;c.q.D.....
+04e0: dd e6 39 b4 6e 9f 7e de 4e fd d4 d3 00 76 00 da ..9.n.~.N....v..
+04f0: b6 bf 6b 3f b5 b6 22 9f 9b c2 bb 5c 6b e8 70 91 ..k?.."....\k.p.
+0500: 71 6c bb 51 84 85 34 bd a4 3d 30 48 d7 fb ab 00 ql.Q..4..=0H....
+0510: 00 01 89 14 13 04 55 00 00 04 03 00 47 30 45 02 ......U.....G0E.
+0520: 21 00 d9 b1 e1 5f af ac 01 6e 41 68 1e 4e 16 89 !...._...nAh.N..
+0530: f4 dd ee 85 90 64 4c b9 2f 15 de 90 6b fc 2e 2b .....dL./...k..+
+0540: 15 0b 02 20 65 d1 5d 3c 62 74 76 6d c4 59 08 a9 ... e.]<btvm.Y..
+0550: 1a 27 e7 83 6d a4 0a f1 f9 a0 7b c4 28 59 e2 20 .'..m.....{.(Y. 
+0560: ea 84 14 2c 30 0d 06 09 2a 86 48 86 f7 0d 01 01 ...,0...*.H.....
+0570: 0b 05 00 03 82 01 01 00 62 91 cf e0 46 9d f9 8e ........b...F...
+0580: df 89 96 b8 a8 ce 59 79 86 f3 a2 6e 52 23 f7 46 ......Yy...nR#.F
+0590: 64 f0 9a 9e b2 b5 6f 4b e6 9d 59 84 d3 81 b5 25 d.....oK..Y....%
+05a0: 8b a2 c0 2c a5 c7 4a 2d 81 df 33 97 03 2e 06 49 ...,..J-..3....I
+05b0: 6c b4 d0 d7 66 f5 a6 a1 2e 53 29 8f 42 ad 48 82 l...f....S).B.H.
+05c0: e9 d7 03 1f 7b fa 1c 7e 2f 70 04 e8 fe bc 46 07 ....{..~/p....F.
+05d0: 03 ea 20 80 dc 2d a3 41 3a 6a 5c ca c1 e0 f0 c6 .. ..-.A:j\.....
+05e0: 53 69 e9 47 8c b9 74 1c c0 f9 6b bd 57 56 82 cb Si.G..t...k.WV..
+05f0: 14 92 ef 41 66 43 2d c1 6c 95 94 4d 3a 17 7e c7 ...AfC-.l..M:.~.
+0600: fa 0d a2 5f 95 f2 e4 44 66 4c 72 e4 d4 48 a1 80 ..._...DfLr..H..
+0610: a3 1a 38 f3 53 97 89 71 06 2e e9 03 b8 e2 95 87 ..8.S..q........
+0620: 47 cf 8c 28 1c a0 67 79 7d 37 b3 15 cb a0 60 d3 G..(..gy}7....`.
+0630: 1f ac 2c d8 38 91 59 69 c2 d2 ad dd 4f 73 ab 51 ..,.8.Yi....Os.Q
+0640: 26 b7 c4 cb d7 61 5d d4 de d4 d0 29 4f 68 07 1d &....a]....)Oh..
+0650: 42 c9 b0 c5 7f e3 ef 09 5a 7c bc 56 99 02 79 ee B.......Z|.V..y.
+0660: ab df ce 11 9b 79 7e 28 2a 05 eb 7c e5 a3 e6 29 .....y~(*..|...)
+0670: 33 11 be ef 07 e4 0f 5e 00 04 93 30 82 04 8f 30 3......^...0...0
+0680: 82 03 77 a0 03 02 01 02 02 10 7d f0 51 60 ca 5d ..w.......}.Q`.]
+0690: 28 7b 67 76 fa 02 e0 d6 ba bc 30 0d 06 09 2a 86 ({gv......0...*.
+06a0: 48 86 f7 0d 01 01 0b 05 00 30 4c 31 20 30 1e 06 H........0L1 0..
+06b0: 03 55 04 0b 13 17 47 6c 6f 62 61 6c 53 69 67 6e .U....GlobalSign
+06c0: 20 52 6f 6f 74 20 43 41 20 2d 20 52 33 31 13 30  Root CA - R31.0
+06d0: 11 06 03 55 04 0a 13 0a 47 6c 6f 62 61 6c 53 69 ...U....GlobalSi
+06e0: 67 6e 31 13 30 11 06 03 55 04 03 13 0a 47 6c 6f gn1.0...U....Glo
+06f0: 62 61 6c 53 69 67 6e 30 1e 17 0d 32 33 30 31 31 balSign0...23011
+0700: 38 30 33 33 36 35 32 5a 17 0d 32 35 30 31 31 38 8033652Z..250118
+0710: 30 30 30 30 30 30 5a 30 58 31 0b 30 09 06 03 55 000000Z0X1.0...U
+0720: 04 06 13 02 42 45 31 19 30 17 06 03 55 04 0a 13 ....BE1.0...U...
+0730: 10 47 6c 6f 62 61 6c 53 69 67 6e 20 6e 76 2d 73 .GlobalSign nv-s
+0740: 61 31 2e 30 2c 06 03 55 04 03 13 25 47 6c 6f 62 a1.0,..U...%Glob
+0750: 61 6c 53 69 67 6e 20 41 74 6c 61 73 20 52 33 20 alSign Atlas R3 
+0760: 44 56 20 54 4c 53 20 43 41 20 32 30 32 33 20 51 DV TLS CA 2023 Q
+0770: 32 30 82 01 22 30 0d 06 09 2a 86 48 86 f7 0d 01 20.."0...*.H....
+0780: 01 01 05 00 03 82 01 0f 00 30 82 01 0a 02 82 01 .........0......
+0790: 01 00 b8 91 18 8b ff 8c 97 28 c3 7c fb ab 2f 1c .........(.|../.
+07a0: fe 9b 69 01 c9 a3 3a f5 fc ba 4d a1 ca 7f d9 a8 ..i...:...M.....
+07b0: a0 ed 99 b3 b3 db 05 7d df a1 3a d0 08 36 58 2f .......}..:..6X/
+07c0: 4a 18 ee 46 3b a6 d4 ba 15 cb c3 1a a6 2a 31 b6 J..F;........*1.
+07d0: d4 fd 13 92 cd 75 55 2c f2 d2 1b fc d3 a7 ac 41 .....uU,.......A
+07e0: 31 e1 08 c5 bd 8d a5 a1 e7 4a 35 8f cf 54 0f 02 1........J5..T..
+07f0: 0d 56 e6 b1 1c 00 39 d6 dc 0a a9 f7 20 d8 f8 c6 .V....9..... ...
+0800: b6 51 f2 eb 6a 74 2d c1 7f 24 f9 ba b3 1f 9f 3a .Q..jt-..$.....:
+0810: 99 0d 45 dc aa f0 f4 c8 44 11 62 84 d5 f1 80 0e ..E.....D.b.....
+0820: 48 ab e2 f1 f5 5a 66 3f d8 ef 7d 8a 67 6f 91 8c H....Zf?..}.go..
+0830: ea ed ac c2 2b 40 c1 37 f0 2e 7f 80 6d b5 c0 83 ....+@.7....m...
+0840: af 28 90 4a d4 50 54 eb 9d 06 fa 9c b0 5d c5 70 .(.J.PT......].p
+0850: 69 d5 95 c6 0c e3 3e 72 b5 61 5c 29 07 e5 ed 63 i.....>r.a\)...c
+0860: 41 d7 dc 30 90 a6 9c dd b0 67 a9 f1 75 c8 03 2c A..0.....g..u..,
+0870: 89 87 7b 4c de 74 5e 8e 01 6a b9 90 6a ec d3 fb ..{L.t^..j..j...
+0880: eb d8 dc e7 c0 fa 46 ca e6 2b d3 51 92 cb 1f 5b ......F..+.Q...[
+0890: 4f fd 02 03 01 00 01 a3 82 01 5f 30 82 01 5b 30 O........._0..[0
+08a0: 0e 06 03 55 1d 0f 01 01 ff 04 04 03 02 01 86 30 ...U...........0
+08b0: 1d 06 03 55 1d 25 04 16 30 14 06 08 2b 06 01 05 ...U.%..0...+...
+08c0: 05 07 03 01 06 08 2b 06 01 05 05 07 03 02 30 12 ......+.......0.
+08d0: 06 03 55 1d 13 01 01 ff 04 08 30 06 01 01 ff 02 ..U.......0.....
+08e0: 01 00 30 1d 06 03 55 1d 0e 04 16 04 14 c6 a2 61 ..0...U........a
+08f0: 13 45 15 cc 90 8f ba c1 ac bc cc 3b 0d 0e d0 de .E.........;....
+0900: 06 30 1f 06 03 55 1d 23 04 18 30 16 80 14 8f f0 .0...U.#..0.....
+0910: 4b 7f a8 2e 45 24 ae 4d 50 fa 63 9a 8b de e2 dd K...E$.MP.c.....
+0920: 1b bc 30 7b 06 08 2b 06 01 05 05 07 01 01 04 6f ..0{..+........o
+0930: 30 6d 30 2e 06 08 2b 06 01 05 05 07 30 01 86 22 0m0...+.....0.."
+0940: 68 74 74 70 3a 2f 2f 6f 63 73 70 32 2e 67 6c 6f http://ocsp2.glo
+0950: 62 61 6c 73 69 67 6e 2e 63 6f 6d 2f 72 6f 6f 74 balsign.com/root
+0960: 72 33 30 3b 06 08 2b 06 01 05 05 07 30 02 86 2f r30;..+.....0../
+0970: 68 74 74 70 3a 2f 2f 73 65 63 75 72 65 2e 67 6c http://secure.gl
+0980: 6f 62 61 6c 73 69 67 6e 2e 63 6f 6d 2f 63 61 63 obalsign.com/cac
+0990: 65 72 74 2f 72 6f 6f 74 2d 72 33 2e 63 72 74 30 ert/root-r3.crt0
+09a0: 36 06 03 55 1d 1f 04 2f 30 2d 30 2b a0 29 a0 27 6..U.../0-0+.).'
+09b0: 86 25 68 74 74 70 3a 2f 2f 63 72 6c 2e 67 6c 6f .%http://crl.glo
+09c0: 62 61 6c 73 69 67 6e 2e 63 6f 6d 2f 72 6f 6f 74 balsign.com/root
+09d0: 2d 72 33 2e 63 72 6c 30 21 06 03 55 1d 20 04 1a -r3.crl0!..U. ..
+09e0: 30 18 30 08 06 06 67 81 0c 01 02 01 30 0c 06 0a 0.0...g.....0...
+09f0: 2b 06 01 04 01 a0 32 0a 01 03 30 0d 06 09 2a 86 +.....2...0...*.
+0a00: 48 86 f7 0d 01 01 0b 05 00 03 82 01 01 00 07 99 H...............
+0a10: d2 bb 20 cc 24 1c d0 05 30 2b d4 13 9b 1f 2d 58 .. .$...0+....-X
+0a20: 30 52 ef 71 bf 82 c6 aa eb c0 8d e9 92 26 1a fc 0R.q.........&..
+0a30: 24 98 de 2a 1e 75 f4 c0 a5 31 36 01 01 c7 65 b5 $..*.u...16...e.
+0a40: d3 3f 1b cb 95 a2 59 be f7 31 30 da f0 09 17 a0 .?....Y..10.....
+0a50: 96 53 85 4c fc a9 90 cf 1e 31 3b 20 cd 4e 8d 53 .S.L.....1; .N.S
+0a60: 59 78 c7 52 0f a4 01 9d 47 01 05 26 54 99 bf 92 Yx.R....G..&T...
+0a70: 72 a5 89 32 73 d5 fe c1 29 5c 91 07 22 d1 1f 7b r..2s...)\.."..{
+0a80: 00 95 e9 7e 82 86 7a 97 19 2f 87 de 0c 69 d6 f5 ...~..z../...i..
+0a90: 98 71 95 53 8c 84 ed 5b 7e f1 6c fa fb 7d a0 68 .q.S...[~.l..}.h
+0aa0: 35 ae fd 30 ff d3 c1 23 15 16 f1 a1 f2 e8 28 be 5..0...#......(.
+0ab0: 8d 0d 9a c7 15 0d 1c f4 a0 78 59 f8 0c 13 22 58 .........xY..."X
+0ac0: 54 c0 7e 9c 0f b2 0e aa 07 ab 73 52 fc 9d 9f 5d T.~.......sR...]
+0ad0: 5c f2 f3 05 62 bd 79 c8 c5 58 e4 f8 9c 89 57 ba \...b.y..X....W.
+0ae0: e0 01 2c c1 31 9f 5d 6d 73 7a 9b 92 33 73 0c 9a ..,.1.]msz..3s..
+0af0: 0c 42 1a b4 2d eb 58 86 ca 67 f1 9a c7 a5 2a 4a .B..-.X..g....*J
+0b00: 54 ba 84 11 2b e6 b7 3c 35 36 f8 56 7d fc       T...+..<56.V}.
+== Info: TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+<= Recv SSL data, 300 bytes (0x12c)
+0000: 0c 00 01 28 03 00 1d 20 32 00 39 9e d3 a2 52 cf ...(... 2.9...R.
+0010: f6 4e 1e 3c 5e 90 4f 12 e1 d7 ff 65 a8 1e 78 39 .N.<^.O....e..x9
+0020: 40 b4 71 cd 34 89 b8 27 08 04 01 00 62 6b a2 9e @.q.4..'....bk..
+0030: fb c0 82 46 42 55 56 19 9b 44 11 d4 e5 77 53 4a ...FBUV..D...wSJ
+0040: 72 3f fb 0b ad 9c a8 6a 02 38 2d 8f 58 2d f2 3f r?.....j.8-.X-.?
+0050: 98 ff c3 a0 c7 b6 b0 3e d2 cf 37 15 15 c0 6c de .......>..7...l.
+0060: 87 f7 11 e9 c9 79 9d 9f 93 00 31 96 d1 6a 8f 4d .....y....1..j.M
+0070: 3c 6a de ab 2b e2 87 30 04 31 88 7a 98 ae 1a 2a <j..+..0.1.z...*
+0080: b5 83 9c 25 66 c1 c8 4d 64 f9 85 4e 63 75 17 56 ...%f..Md..Ncu.V
+0090: a8 21 08 3f ef 09 75 d4 45 0c 2f eb d8 13 40 f4 .!.?..u.E./...@.
+00a0: d6 47 cf 61 27 5f a3 3a 09 3c 17 02 9c 8e 7e 5a .G.a'_.:.<....~Z
+00b0: 35 ca c7 6b 3b 97 d6 37 de 40 c6 a3 87 a5 47 44 5..k;..7.@....GD
+00c0: 71 ad 55 3c bd c8 b2 95 98 d7 6c bd 58 5e 74 43 q.U<......l.X^tC
+00d0: 1b cd ca c9 b3 72 b2 aa 1a 3f e1 4e ab b2 10 75 .....r...?.N...u
+00e0: c9 ad 95 a4 2c 29 fb 39 20 29 a5 bf 0e 28 e4 e6 ....,).9 )...(..
+00f0: a7 7a 7e 02 1a de e8 c9 37 f5 16 e1 38 f3 c3 10 .z~.....7...8...
+0100: b6 20 e7 4c da 6f 8f 5a 3c dc 8a 4a af 86 b0 fe . .L.o.Z<..J....
+0110: f5 01 d3 39 c2 a4 c0 ba db 20 5c b2 31 ce ef ea ...9..... \.1...
+0120: ec 08 11 29 df 00 88 7b d5 60 bd 5e             ...)...{.`.^
+== Info: TLSv1.2 (IN), TLS handshake, Server finished (14):
+<= Recv SSL data, 4 bytes (0x4)
+0000: 0e 00 00 00                                     ....
+== Info: TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+=> Send SSL data, 37 bytes (0x25)
+0000: 10 00 00 21 20 11 bd 62 bb d5 e0 68 5c a5 4e 05 ...! ..b...h\.N.
+0010: 75 96 bf 30 4e 52 39 a9 bb d7 9d 48 7a cf d9 eb u..0NR9....Hz...
+0020: 8f 51 bd 28 0b                                  .Q.(.
+== Info: TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+=> Send SSL data, 1 bytes (0x1)
+0000: 01                                              .
+== Info: TLSv1.2 (OUT), TLS handshake, Finished (20):
+=> Send SSL data, 16 bytes (0x10)
+0000: 14 00 00 0c 56 ad bf 2b ba a2 e3 df a4 55 b3 88 ....V..+.....U..
+== Info: TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+<= Recv SSL data, 1 bytes (0x1)
+0000: 01                                              .
+== Info: TLSv1.2 (IN), TLS handshake, Finished (20):
+<= Recv SSL data, 16 bytes (0x10)
+0000: 14 00 00 0c f9 65 46 d5 6c 39 3a 51 3f ee b9 f2 .....eF.l9:Q?...
+== Info: SSL connection using TLSv1.2 / ECDHE-RSA-CHACHA20-POLY1305
+== Info: ALPN: server accepted h2
+== Info: Server certificate:
+== Info:  subject: CN=app.launchdarkly.com
+== Info:  start date: Jul  2 00:48:57 2023 GMT
+== Info:  expire date: Aug  2 00:48:56 2024 GMT
+== Info:  subjectAltName: host "app.launchdarkly.com" matched cert's "app.launchdarkly.com"
+== Info:  issuer: C=BE; O=GlobalSign nv-sa; CN=GlobalSign Atlas R3 DV TLS CA 2023 Q2
+== Info:  SSL certificate verify ok.
+== Info: using HTTP/2
+== Info: h2 [:method: POST]
+== Info: h2 [:scheme: https]
+== Info: h2 [:authority: app.launchdarkly.com]
+== Info: h2 [:path: /api/v2/flags/default/my-test-flag]
+== Info: h2 [user-agent: curl/8.1.2]
+== Info: h2 [accept: */*]
+== Info: h2 [authorization: api-3418615e-400f-4128-bbce-97a1ce24cd2b]
+== Info: h2 [content-type: application/json]
+== Info: h2 [content-length: 9]
+== Info: Using Stream ID: 1 (easy handle 0x7fb09f808200)
+=> Send header, 223 bytes (0xdf)
+0000: 50 4f 53 54 20 2f 61 70 69 2f 76 32 2f 66 6c 61 POST /api/v2/fla
+0010: 67 73 2f 64 65 66 61 75 6c 74 2f 6d 79 2d 74 65 gs/default/my-te
+0020: 73 74 2d 66 6c 61 67 20 48 54 54 50 2f 32 0d 0a st-flag HTTP/2..
+0030: 48 6f 73 74 3a 20 61 70 70 2e 6c 61 75 6e 63 68 Host: app.launch
+0040: 64 61 72 6b 6c 79 2e 63 6f 6d 0d 0a 55 73 65 72 darkly.com..User
+0050: 2d 41 67 65 6e 74 3a 20 63 75 72 6c 2f 38 2e 31 -Agent: curl/8.1
+0060: 2e 32 0d 0a 41 63 63 65 70 74 3a 20 2a 2f 2a 0d .2..Accept: */*.
+0070: 0a 41 75 74 68 6f 72 69 7a 61 74 69 6f 6e 3a 20 .Authorization: 
+0080: 61 70 69 2d 33 34 31 38 36 31 35 65 2d 34 30 30 api-3418615e-400
+0090: 66 2d 34 31 32 38 2d 62 62 63 65 2d 39 37 61 31 f-4128-bbce-97a1
+00a0: 63 65 32 34 63 64 32 62 0d 0a 43 6f 6e 74 65 6e ce24cd2b..Conten
+00b0: 74 2d 54 79 70 65 3a 20 61 70 70 6c 69 63 61 74 t-Type: applicat
+00c0: 69 6f 6e 2f 6a 73 6f 6e 0d 0a 43 6f 6e 74 65 6e ion/json..Conten
+00d0: 74 2d 4c 65 6e 67 74 68 3a 20 39 0d 0a 0d 0a    t-Length: 9....
+=> Send data, 9 bytes (0x9)
+0000: 6e 61 6d 65 3d 4d 61 72 6b                      name=Mark
+== Info: We are completely uploaded and fine
+<= Recv header, 13 bytes (0xd)
+0000: 48 54 54 50 2f 32 20 34 30 35 20 0d 0a          HTTP/2 405 ..
+<= Recv header, 275 bytes (0x113)
+0000: 61 63 63 65 73 73 2d 63 6f 6e 74 72 6f 6c 2d 61 access-control-a
+0010: 6c 6c 6f 77 2d 68 65 61 64 65 72 73 3a 20 41 63 llow-headers: Ac
+0020: 63 65 70 74 2c 43 6f 6e 74 65 6e 74 2d 54 79 70 cept,Content-Typ
+0030: 65 2c 43 6f 6e 74 65 6e 74 2d 4c 65 6e 67 74 68 e,Content-Length
+0040: 2c 41 63 63 65 70 74 2d 45 6e 63 6f 64 69 6e 67 ,Accept-Encoding
+0050: 2c 41 75 74 68 6f 72 69 7a 61 74 69 6f 6e 2c 58 ,Authorization,X
+0060: 2d 52 65 71 75 65 73 74 65 64 2d 57 69 74 68 2c -Requested-With,
+0070: 58 2d 4c 44 2d 50 72 69 76 61 74 65 2c 58 2d 4c X-LD-Private,X-L
+0080: 44 2d 41 63 63 6f 75 6e 74 49 64 2c 58 2d 4c 44 D-AccountId,X-LD
+0090: 2d 45 6e 76 49 64 2c 58 2d 4c 44 2d 50 72 6a 49 -EnvId,X-LD-PrjI
+00a0: 64 2c 58 2d 4c 61 75 6e 63 68 44 61 72 6b 6c 79 d,X-LaunchDarkly
+00b0: 2d 45 76 65 6e 74 2d 53 63 68 65 6d 61 2c 58 2d -Event-Schema,X-
+00c0: 4c 61 75 6e 63 68 44 61 72 6b 6c 79 2d 55 73 65 LaunchDarkly-Use
+00d0: 72 2d 41 67 65 6e 74 2c 58 2d 4c 61 75 6e 63 68 r-Agent,X-Launch
+00e0: 44 61 72 6b 6c 79 2d 57 72 61 70 70 65 72 2c 4c Darkly-Wrapper,L
+00f0: 44 2d 41 50 49 2d 56 65 72 73 69 6f 6e 2c 58 2d D-API-Version,X-
+0100: 4c 61 75 6e 63 68 44 61 72 6b 6c 79 2d 54 61 67 LaunchDarkly-Tag
+0110: 73 0d 0a                                        s..
+<= Recv header, 65 bytes (0x41)
+0000: 61 63 63 65 73 73 2d 63 6f 6e 74 72 6f 6c 2d 61 access-control-a
+0010: 6c 6c 6f 77 2d 6d 65 74 68 6f 64 73 3a 20 4f 50 llow-methods: OP
+0020: 54 49 4f 4e 53 2c 20 48 45 41 44 2c 20 47 45 54 TIONS, HEAD, GET
+0030: 2c 20 50 41 54 43 48 2c 20 44 45 4c 45 54 45 0d , PATCH, DELETE.
+0040: 0a                                              .
+<= Recv header, 32 bytes (0x20)
+0000: 61 63 63 65 73 73 2d 63 6f 6e 74 72 6f 6c 2d 61 access-control-a
+0010: 6c 6c 6f 77 2d 6f 72 69 67 69 6e 3a 20 2a 0d 0a llow-origin: *..
+<= Recv header, 29 bytes (0x1d)
+0000: 61 63 63 65 73 73 2d 63 6f 6e 74 72 6f 6c 2d 6d access-control-m
+0010: 61 78 2d 61 67 65 3a 20 33 30 30 0d 0a          ax-age: 300..
+<= Recv header, 42 bytes (0x2a)
+0000: 61 6c 6c 6f 77 3a 20 4f 50 54 49 4f 4e 53 2c 20 allow: OPTIONS, 
+0010: 48 45 41 44 2c 20 47 45 54 2c 20 50 41 54 43 48 HEAD, GET, PATCH
+0020: 2c 20 44 45 4c 45 54 45 0d 0a                   , DELETE..
+<= Recv header, 45 bytes (0x2d)
+0000: 73 74 72 69 63 74 2d 74 72 61 6e 73 70 6f 72 74 strict-transport
+0010: 2d 73 65 63 75 72 69 74 79 3a 20 6d 61 78 2d 61 -security: max-a
+0020: 67 65 3d 33 31 35 33 36 30 30 30 0d 0a          ge=31536000..
+<= Recv header, 22 bytes (0x16)
+0000: 61 63 63 65 70 74 2d 72 61 6e 67 65 73 3a 20 62 accept-ranges: b
+0010: 79 74 65 73 0d 0a                               ytes..
+<= Recv header, 37 bytes (0x25)
+0000: 64 61 74 65 3a 20 46 72 69 2c 20 30 34 20 41 75 date: Fri, 04 Au
+0010: 67 20 32 30 32 33 20 32 30 3a 34 39 3a 34 34 20 g 2023 20:49:44 
+0020: 47 4d 54 0d 0a                                  GMT..
+<= Recv header, 18 bytes (0x12)
+0000: 76 69 61 3a 20 31 2e 31 20 76 61 72 6e 69 73 68 via: 1.1 varnish
+0010: 0d 0a                                           ..
+<= Recv header, 40 bytes (0x28)
+0000: 78 2d 73 65 72 76 65 64 2d 62 79 3a 20 63 61 63 x-served-by: cac
+0010: 68 65 2d 64 66 77 2d 6b 64 61 6c 32 31 32 30 30 he-dfw-kdal21200
+0020: 37 38 2d 44 46 57 0d 0a                         78-DFW..
+<= Recv header, 15 bytes (0xf)
+0000: 78 2d 63 61 63 68 65 3a 20 4d 49 53 53 0d 0a    x-cache: MISS..
+<= Recv header, 17 bytes (0x11)
+0000: 78 2d 63 61 63 68 65 2d 68 69 74 73 3a 20 30 0d x-cache-hits: 0.
+0010: 0a                                              .
+<= Recv header, 38 bytes (0x26)
+0000: 78 2d 74 69 6d 65 72 3a 20 53 31 36 39 31 31 38 x-timer: S169118
+0010: 32 31 38 34 2e 33 38 39 39 33 32 2c 56 53 30 2c 2184.389932,VS0,
+0020: 56 45 33 37 0d 0a                               VE37..
+<= Recv header, 23 bytes (0x17)
+0000: 76 61 72 79 3a 20 41 63 63 65 70 74 2d 45 6e 63 vary: Accept-Enc
+0010: 6f 64 69 6e 67 0d 0a                            oding..
+<= Recv header, 8 bytes (0x8)
+0000: 61 67 65 3a 20 30 0d 0a                         age: 0..
+<= Recv header, 19 bytes (0x13)
+0000: 63 6f 6e 74 65 6e 74 2d 6c 65 6e 67 74 68 3a 20 content-length: 
+0010: 30 0d 0a                                        0..
+<= Recv header, 2 bytes (0x2)
+0000: 0d 0a                                           ..
+<= Recv data, 0 bytes (0x0)
+== Info: Connection #1 to host app.launchdarkly.com left intact
