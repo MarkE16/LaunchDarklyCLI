@@ -1,7 +1,0 @@
-{
-	"configuration": {
-		"accountPAT": "TOKEN_HERE",
-		"defaultEnvKey": "test",
-		"defaultProjectKey": "default"
-	}
-}
