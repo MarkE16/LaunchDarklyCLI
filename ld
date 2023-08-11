@@ -1,24 +1,36 @@
 #!/bin/bash
 
-env_flag=''
-silent_flag='false'
-edit_enabled_flag='false'
-edit_disabled_flag='false'
-command=''
-flag_key=''
-flag_value=''
+print_error() {
+	printf "\e[41mERR!\e[0m %s\n" "$1"
+}
+
+print_warn() {
+	printf "\e[103;30mWARN\e[0m %s\n" "$1"
+}
+
+print_success() {
+	printf "\e[48;5;28mDONE\e[0m %s\n" "$1"
+}
+
+print_bold() {
+	printf "\e[1m%s\e[0m\n" "$1"
+}
 
 get_flag_status() {
-	flag_status_result=$(curl -s "https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
+	flag_status_result=$(curl -s --fail-with-body -w 'HTTP_CODE_IDENTIFIER%{http_code}' "https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
                         -H "Authorization: $ld_api_key"
         )
+#	flag_status_result_with_http_code=$(read -r -d "HTTP_CODE_IDENTIFIER" <<< "$flag_status_result_with_http_code")
+#	flag_status_result=${flag_status_result_with_http_code[0]}
+#	flag_status_result_code=${flag_status_result_with_http_code[1]}
+#
+#
+#	echo "CODE $flag_status_result_code"
+	echo "RESULT $flag_status_result"
 
 	flag_status=$(jq ".environments.$ld_current_environment.on" <<< "$flag_status_result")
 
 	if [[ -z $flag_status ]]; then
-		status_code=$(curl -s -I -o /dev/null -w '%{http_code}' "https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
-                                                                                    -H "Authorization: $ld_api_key"
-		)
 
 		print_error "Failed to get the status of '$flag_key' in '$ld_current_environment'."
 
@@ -44,18 +56,6 @@ show_status_output() {
 	fi
 }
 
-print_error() {
-	printf "\e[41mERR!\e[0m %s\n" "$1"
-}
-
-print_success() {
-	printf "\e[48;5;28mDONE\e[0m %s\n" "$1"
-}
-
-print_bold() {
-	printf "\e[1m%s\e[0m\n" "$1"
-}
-
 print_commands() {
   echo
   print_bold "> LAUNCH DARKLY COMMANDS"
@@ -75,13 +75,17 @@ check_connection_status() {
   fi
 }
 
-if [[ $# -eq 0 ]]; then
-  print_commands
-  exit 0
-fi
+
+# Flags/Parameters
+env_flag=''
+silent_flag='false'
+edit_enabled_flag='false'
+edit_disabled_flag='false'
+command=''
+flag_key=''
+flag_value=''
 
 command=$1
-ld_default_environment=$(jq -r ".configuration.defaultEnvKey" "config.json")
 
 script_args=()
 
@@ -104,11 +108,27 @@ done
 command=${script_args[0]}
 flag_key=${script_args[1]}
 
-# Weird syntax, but apparently Bash knows what parameter is used even though you don't use the syntax "$4".
-# Just a guess, but maybe it's because it's in a variable substitution block? Though it doesn't make sense as to
-# the fact that I have to include a $ for LD_DEFAULT_ENVIRONMENT.
-ld_current_environment=${env_flag:-$LD_DEFAULT_ENVIRONMENT}
-ld_api_key=$(jq -r ".configuration.accountPAT" "config.json")
+# API Configurations
+ld_default_environment=$(jq -r ".configurations.defaultEnvKey" "config.json")
+
+if [[ "$ld_default_environment" == "null" ]]; then
+	ld_default_environment="test"
+fi
+
+ld_current_environment=${env_flag:-$ld_default_environment}
+ld_api_key=$(jq -r ".configurations.accessToken" "config.json")
+
+key_length=${#ld_api_key}
+
+if [[ $ld_api_key == "null" || $key_length -lt 40 || $key_length -gt 40 ]]; then
+	print_error "unrecognized_token: Either you provided a string that doesn't seem to be an API key or you didn't set up the config file with the API key."
+	exit 1
+fi
+
+if [[ $# -eq 0 ]]; then
+  print_commands
+  exit 0
+fi
 
 if [[ $command == "toggle" ]]; then
 
@@ -129,6 +149,7 @@ if [[ $command == "toggle" ]]; then
 
 		if [[ -z $flag_value ]]; then
 			get_flag_status
+			# It's weird, but after the function executes then Bash can access $flag_status outside of the function.
 			if [[ $flag_status == 'true' ]]; then
 				flag_value='false'
 			else
@@ -137,7 +158,7 @@ if [[ $command == "toggle" ]]; then
 		fi
 
 
-		CURL_RESULT=$(curl -s -X PATCH \
+		patch_request_result=$(curl --fail-with-body -s -X PATCH \
 				"https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
 				-H "Authorization: $ld_api_key" \
 				-H 'Content-Type: application/json' \
@@ -151,7 +172,9 @@ if [[ $command == "toggle" ]]; then
 						]
 JSON
 )
-		final_flag_result=$(jq ".environments.$ld_current_environment.on" <<< "$CURL_RESULT")
+
+	echo $ld_current_environment
+		final_flag_result=$(jq ".environments.$ld_current_environment.on" <<< "$patch_request_result")
 
 		if [[ $final_flag_result == "$flag_value" ]]; then
 			if [[ $silent_flag != 'true' ]]; then
@@ -160,36 +183,29 @@ JSON
 				echo "$final_flag_result"
 			fi
 		else
-			status_code=$(curl -s -I -o /dev/null -w '%{http_code}' \
-                         				"https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
-                         				-H "Authorization: $ld_api_key" \
-                         				-H 'Content-Type: application/json' \
-                         				-d @- << JSON
-                         						[
-                         							{
-                         								"op": "replace",
-                         								"path": "/environments/$ld_current_environment/on",
-                         								"value": $flag_value
-                         							}
-                         						]
-JSON
-)
+			code=$(jq -r ".code" <<< "$patch_request_result")
+			message=$(jq ".message" <<< "$patch_request_result")
 			print_error "There was a problem trying to update the flag value."
 
-			echo "CODE: $status_code"
+			jq <<< "$patch_request_result"
 
-			if [[ $status_code -eq 404 ]]; then
-				print_error "404: Flag '$flag_key' does not exist."
-			elif [[ $status_code -eq 405 ]]; then
-				print_error "405: You are not authorized to complete this action. Contact @MarkE16 via GitHub if you think this is a problem."
-			elif [[ $status_code -eq 401 ]]; then
-				print_error "401: You possibly did not pass an API key in the config file or it expired."
+			if [[ $code == "not_found" ]]; then
+				print_error "$code: Flag '$flag_key' does not exist."
+			elif [[ $code == "invalid_request" || $code == "invalid_patch" ]]; then
+				print_error "$code: You most likely entered an invalid value for either the flag value or the environment (if you passed a flag)."
+			elif [[ $code == "unauthorized" ]]; then
+				print_error "$code: The token you provided is either invalid or expired. Please correct this."
 			else
-				print_error "400: Bad Request. This could mean anything."
+				echo "$patch_request_result"
+				print_error "Bad Request: $code: $message"
+				# add debug flag that prints extra output if supplied -d
+				# if debug is enabled do the following
+				# if code is empty, or message is empty, output full patch_request_result
+				print_warn "If there is no error output, please report the steps you took to encounter this error on the GitHub via https://github.com/MarkE16/LaunchDarklyCLI"
 			fi
-
 		fi
 	fi
+
 elif [[ $command == "status" ]]; then
 	if [[ -z $flag_key ]]; then
 		echo

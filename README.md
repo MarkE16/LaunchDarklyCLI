@@ -1,7 +1,17 @@
 # Launch Darkly CLI
-The un-official command line tool for Launch Darkly.
+The un-official command line tool for Launch Darkly. |
+ **v0.0.1**
+---
 
-v0.0.1
+### ONLY SUPPORTS MACOS AT THIS TIME
+In the future, this tool will be supported to more operating
+systems, but for now you can only use this tool on a Mac,
+apologies.
+
+*Want to make this project available for more people?
+Contribute!*
+
+---
 
 ### Table of Contents
 
@@ -15,8 +25,9 @@ v0.0.1
 This repository contains the side project I worked on 
 during my internship at [Arrive Logistics](http://arrivelogistics.com/).
 It is a tool created in Bash that contains
-the same functionality as the Launch Darkly UI but
-instead lives inside your terminal.
+only a few functionality that the original LaunchDarkly UI has such as toggling
+feature flags and getting their statuses, but will contain more features
+in the future.
 
 ### The Why
 I decided to get started on this project for my interest
@@ -24,18 +35,17 @@ in developing my first ever command line tool. Even
 though there were many ideas I could work on, I wanted
 to start with something simple as well as create
 a tool that the engineers at Arrive could potentially
-use. I decided to create a tool for Launch Darkly because
+use. I decided to create a tool for LaunchDarkly because
 I thought there was a problem I could solve for them.
 Instead of taking the time to open your browser and 
 get into the Launch Darkly UI, you can save yourself
 time and clicks by just opening your terminal and
-running your commands!
-
-> ### Side Note
-> This project was developed under an *extreme* amount
-> time, so there is not many features and is still
-> in development, along with many bugs that can arise.
-> TL;DR: Releases may be unstable; Proceed with caution.
+running your commands. While I am aware of existing programs
+to LaunchDarkly like the [CLI tool from LaunchDarklyLabs](https://github.com/launchdarkly-labs/ldc)
+and the [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=LaunchDarklyOfficial.launchdarkly)
+by the official LaunchDarkly team, I believe this tool
+can be beneficial to users that use IDEs other than Visual Studio
+Code and could be used in GitHub Workflows.
 
 
 ### Getting Started
@@ -54,7 +64,6 @@ the script to run properly.
   "configurations": {
     "accessToken": "YOUR_ACCESS_TOKEN",
     "defaultEnvKey": "test",
-    "defaultProjectKey": "default"
   }
 }
 ```
@@ -95,14 +104,23 @@ the `-p` flag then the default will be used.
 > check.
 > <img style="margin-top: 30px" alt="img.png" height="100%" src="img.png" width="100%"/>
 
-
-3. Cool, now that you populated the config file,
-you can now use the **Launch Darkly CLI tool**!
+3. Once you have your configuration ready, you can run
+the program, but first you will need to add the program
+to your PATH if you want to run this program *anywhere*
+from the terminal.
+   - For **zsh** owners: Find your `.zshrc` file from your
+home directory and then add this line to the file:
+```shell
+export PATH="$PATH_TO_LD_FILE:$PATH"
+# For example, if the program was located in ~/code/LDCLI,
+# ("~/" references the home directory.)
+export PATH="Users/you/code/LDCLI:$PATH"
+```
+4. Cool, everything should be all set for you to
+use the **Launch Darkly CLI tool**!
 
 ### Currently Supported Commands
-In case you didn't see the Side Note, this
-project was developed to closely under a week,
-so there is not many supported commands. In the future,
+Currently, there is not many commands In the future,
 this list will be more populated with commands that
 contain features that the Launch Darkly UI has, so
 be on the lookout for updates. Otherwise, the
