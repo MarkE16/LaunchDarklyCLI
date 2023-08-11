@@ -17,16 +17,10 @@ print_bold() {
 }
 
 get_flag_status() {
-	flag_status_result=$(curl -s --fail-with-body -w 'HTTP_CODE_IDENTIFIER%{http_code}' "https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
+	flag_status_code=$(curl -s -o .flag_status_response -w '%{response_code}' "https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
                         -H "Authorization: $ld_api_key"
         )
-#	flag_status_result_with_http_code=$(read -r -d "HTTP_CODE_IDENTIFIER" <<< "$flag_status_result_with_http_code")
-#	flag_status_result=${flag_status_result_with_http_code[0]}
-#	flag_status_result_code=${flag_status_result_with_http_code[1]}
-#
-#
-#	echo "CODE $flag_status_result_code"
-	echo "RESULT $flag_status_result"
+	flag_status_result=$(cat .flag_status_response)
 
 	flag_status=$(jq ".environments.$ld_current_environment.on" <<< "$flag_status_result")
 
@@ -34,7 +28,7 @@ get_flag_status() {
 
 		print_error "Failed to get the status of '$flag_key' in '$ld_current_environment'."
 
-		if [[ $status_code -eq 404 ]]; then
+		if [[ $flag_status_code -eq 404 ]]; then
 			print_error "404: Flag '$flag_key' does not exist."
 		else
 			print_error "401: You possibly did not pass an API key in the config file or it expired."
