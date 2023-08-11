@@ -28,11 +28,15 @@ get_flag_status() {
 
 		print_error "Failed to get the status of '$flag_key' in '$ld_current_environment'."
 
+
+		error_body=${flag_status_result:-"<Empty Body>"}
 		if [[ $flag_status_code -eq 404 ]]; then
-			print_error "404: Flag '$flag_key' does not exist."
+			print_error "$flag_status_code: Flag '$flag_key' does not exist."
 		else
-			print_error "401: You possibly did not pass an API key in the config file or it expired."
+			print_error "$flag_status_code: $error_body"
 		fi
+#			print_error "$flag_status_code: $flag_status_result"
+
 		exit 1
 	fi
 }
@@ -152,7 +156,7 @@ if [[ $command == "toggle" ]]; then
 		fi
 
 
-		patch_request_result=$(curl --fail-with-body -s -X PATCH \
+		patch_response_code=$(curl -s -o .toggle_response -w '%{response_code}' -X PATCH \
 				"https://app.launchdarkly.com/api/v2/flags/default/$flag_key" \
 				-H "Authorization: $ld_api_key" \
 				-H 'Content-Type: application/json' \
@@ -166,9 +170,7 @@ if [[ $command == "toggle" ]]; then
 						]
 JSON
 )
-
-	echo $ld_current_environment
-		final_flag_result=$(jq ".environments.$ld_current_environment.on" <<< "$patch_request_result")
+		final_flag_result=$(cat $patch_request_code)
 
 		if [[ $final_flag_result == "$flag_value" ]]; then
 			if [[ $silent_flag != 'true' ]]; then
@@ -190,8 +192,7 @@ JSON
 			elif [[ $code == "unauthorized" ]]; then
 				print_error "$code: The token you provided is either invalid or expired. Please correct this."
 			else
-				echo "$patch_request_result"
-				print_error "Bad Request: $code: $message"
+				print_error "Encountered an unexpected problem: $code: $message"
 				# add debug flag that prints extra output if supplied -d
 				# if debug is enabled do the following
 				# if code is empty, or message is empty, output full patch_request_result
