@@ -55,15 +55,14 @@ repository in your preferred directory.
 git clone https://github.com/MarkE16/LaunchDarklyCLI.git
 ```
 2. Next up, take a peek inside the folder of the project.
-Don't see a `config.json`? That is expected. You should
-create one with this template. This file will 
+The config.json file will 
 contain the necessary configuration settings for 
 the script to run properly.
 ```json
 {
   "configurations": {
     "accessToken": "YOUR_ACCESS_TOKEN",
-    "defaultEnvKey": "test",
+    "defaultEnvKey": "test"
   }
 }
 ```
