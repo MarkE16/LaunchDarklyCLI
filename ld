@@ -121,7 +121,7 @@ ld_api_key=$(jq -r ".configurations.accessToken" "config.json")
 key_length=${#ld_api_key}
 
 if [[ $ld_api_key == "null" || $key_length -lt 40 || $key_length -gt 40 ]]; then
-	print_error "unrecognized_token: Either you provided a string that doesn't seem to be an API key or you didn't set up the config file with the API key."
+	print_error "unrecognized_token: The token provided in configurations/accessToken doesn't seem to be valid. Please be sure that the token you provided is from Launch Darkly. If you don't have one, follow the guide here to create one: https://docs.launchdarkly.com/home/account-security/api-access-tokens#creating-api-access-tokens" 
 	exit 1
 fi
 
